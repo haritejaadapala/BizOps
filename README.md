@@ -2,53 +2,52 @@
 
 BizOps is a single-file Go application that ingests sales/invoice data and turns it into actionable business intelligence. Upload a CSV (or run in CLI mode) to get:
 
-Core KPIs: revenue, orders, AOV, unique customers, retention
+* Core KPIs: revenue, orders, AOV, unique customers, retention
 
-Top customers/products
+* Top customers/products
 
-Daily revenue with anomaly detection
+* Daily revenue with anomaly detection
 
-Overdue/unpaid detection
+* Overdue/unpaid detection
 
-A simple 7-day naїve forecast
+* A simple 7-day naїve forecast
 
-Recommendations that translate insights into next actions
+* Recommendations that translate insights into next actions
 
-Optional Slack alerts and optional AI executive summary
+* Optional Slack alerts and optional AI executive summary
 
-Designed as a compact but serious business solution: easy to demo, easy to extend, useful on day one.
 
-✨ Feature Highlights
+# ✨ Feature Highlights
 
-CSV ingest (flexible headers, forgiving date parsing)
+* CSV ingest (flexible headers, forgiving date parsing)
 
-KPIs: Revenue, Orders, AOV, Unique Customers, Retention (week-over-week repeat rate)
+* KPIs: Revenue, Orders, AOV, Unique Customers, Retention (week-over-week repeat rate)
 
-Daily Revenue Chart (inline SVG — no JS required)
+* Daily Revenue Chart (inline SVG — no JS required)
 
-Anomaly Detection (z-scores ±2σ)
+* Anomaly Detection 
 
-Forecast (7-day average projected over next week)
+* Forecast (7-day average projected over next week)
 
-Credit Risk (flags “overdue”/“unpaid” rows)
+* Credit Risk (flags “overdue”/“unpaid” rows)
 
-Recommendations (clear, prioritized next steps)
+* Recommendations (clear, prioritized next steps)
 
-Two modes:
+* Two modes:
 
-CLI → generates report.md
+    * CLI → generates report.md
 
-Web server → HTML dashboard + JSON API
+    * Web server → HTML dashboard + JSON API
 
-Optional Integrations
+* Optional Integrations
 
-Slack alerts via SLACK_WEBHOOK
+    * Slack alerts via SLACK_WEBHOOK
 
-AI summary via OPENAI_API_KEY (uses OpenAI Chat Completions API)
+    * AI summary via OPENAI_API_KEY (uses OpenAI Chat Completions API)
 
-🧩 Data Format (CSV)
+# 🧩 Data Format (CSV)
 
-Headers are matched case-insensitively and flexibly. Recommended columns:
+* Headers are matched case-insensitively and flexibly. Recommended columns:
 
 Column	Type	Notes
 date	Date	Accepts YYYY-MM-DD, YYYY/MM/DD, RFC3339, etc.
@@ -57,7 +56,7 @@ product	String	SKU / product name
 amount	Number	Positive revenue
 status	String	Free text; flags if contains overdue, unpaid, due
 
-Sample (sample.csv):
+* Sample (sample.csv):
 
 date,customer,product,amount,status
 2025-07-01,Acme Corp,Widget A,199.00,paid
